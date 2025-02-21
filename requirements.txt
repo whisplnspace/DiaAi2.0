@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib
+gradio
+google-generativeai
+python-dotenv
+folium
+requests
+pickle5  # If using Python < 3.8, otherwise pickle is built-in
