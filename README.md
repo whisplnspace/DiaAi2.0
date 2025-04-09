@@ -126,18 +126,35 @@ DiaAi2.0/
 
 ---
 
-## 🌐 Architecture
+
+### 🧠 System Architecture
 
 ```mermaid
 graph TD
-    A[👤 User Input] --> B[📊 Preprocess Features]
-    B --> C[🧠 Predict with SVM Model]
-    C --> D[📈 Display Results in UI]
-    A --> E[💬 Gemini Chatbot Interaction]
-    E --> D
+  UI[🖥️ Gradio Frontend] -->|User Health Data| Preprocessing[🔬 Data Preprocessing]
+  Preprocessing --> Model[🧠 SVM Model Prediction]
+  Model --> Results[📈 Prediction Result & Risk Score]
+  UI -->|User Query| Gemini[🤖 Gemini API Chatbot]
+  Gemini --> ChatResponse[💬 AI-Powered Health Response]
+  Results --> Display[🎯 Display on UI]
+  ChatResponse --> Display
 ```
 
 ---
+
+### 📌 Key Components Explained
+
+| Component           | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| 🖥️ Gradio UI        | Web interface for users to enter data and chat with the bot                |
+| 🔬 Data Preprocessing | Cleans and scales user health input for prediction                         |
+| 🧠 SVM Model         | Support Vector Machine for binary diabetes risk classification             |
+| 📈 Prediction Output | Risk level (High/Low) with optional insights                              |
+| 🤖 Gemini Chatbot    | Google Gemini API providing health-related conversation                    |
+| 🎯 Display Output    | All insights returned to user via the interface                            |
+
+---
+
 
 ## 📅 Roadmap
 
@@ -188,7 +205,7 @@ Check the [LICENSE](LICENSE) file for more info.
 ## 👨‍💻 Author
 
 Crafted with ❤️ by [@whisplnspace](https://github.com/whisplnspace)  
-📧 Contact: whisplnspace@domain.com
+📧 Contact: mondalmrinal39@gmail.com
 
 ---
 
