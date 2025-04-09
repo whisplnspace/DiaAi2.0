@@ -1,129 +1,200 @@
 
-# DiaAI 2.0 🧠💬
+<p align="center">
+  <img src="https://img.shields.io/badge/DiaGuard-AI%20Health%20Assistant-blueviolet?style=for-the-badge&logo=health" alt="DiaGuard Logo">
+</p>
 
-**DiaAI 2.0** is an open-source, multimodal AI assistant designed to simulate real-time dialogue experiences using state-of-the-art language and speech models. Whether you're looking to build intelligent voice-based assistants, interactive avatars, or conversational AI demos, DiaAI provides a modular, extensible base to get started quickly.
+<h1 align="center">DiaGuard (DiaAI 0.2) 🩺🤖</h1>
 
-🌐 Live Demo: [Try on Hugging Face Spaces](https://huggingface.co/spaces/whisplnspace/DiaAI_0.2)
+<p align="center">
+  <b>AI-Powered Diabetes Prediction & Conversational Health Chatbot</b> <br>
+  Empowering proactive healthcare through machine learning and Gemini AI ✨
+</p>
 
----
-
-## 🚀 Features
-
-- 🔊 **Speech-to-Text** using [Whisper](https://github.com/openai/whisper)
-- 🧠 **LLM-based Dialogue** powered by Hugging Face Transformers (e.g., Mistral, LLaMA, or GPT-based models)
-- 🗣️ **Text-to-Speech** using advanced TTS models like [Bark](https://github.com/suno-ai/bark)
-- 🎛️ Clean UI with real-time interaction via Gradio
-- 🧩 Easy to customize and plug in your own models
-- 🛠️ Fully open-source and built for experimentation
-
----
-
-## 🏗️ Architecture
-
-```mermaid
-graph TD
-    UserInput[User Speech] --> Whisper
-    Whisper --> TranscribedText
-    TranscribedText --> LLM
-    LLM --> ResponseText
-    ResponseText --> TTS
-    TTS --> AudioOutput[Spoken Response]
-```
+<p align="center">
+  <a href="https://huggingface.co/spaces/whisplnspace/DiaAI_0.2">
+    <img alt="Live Demo" src="https://img.shields.io/badge/Try%20Live%20Demo-HuggingFace-yellow?style=for-the-badge&logo=huggingface">
+  </a>
+  <a href="https://github.com/whisplnspace/DiaAi2.0/blob/main/LICENSE">
+    <img alt="MIT License" src="https://img.shields.io/github/license/whisplnspace/DiaAi2.0?style=for-the-badge">
+  </a>
+</p>
 
 ---
 
-## 🧰 Tech Stack
+## 🧬 Overview
 
-- 🐍 Python
-- 🤗 Hugging Face Transformers
-- 🧠 Whisper (for ASR)
-- 🗣️ Bark / TTS Models
-- 🎛️ Gradio (Frontend)
-- 🔊 Soundfile, Torchaudio
+**DiaGuard** is an intelligent health companion designed to:
+
+🧠 Predict the risk of diabetes using real-world health data  
+💬 Chat with users through a smart, human-like interface powered by **Gemini API**  
+🖥️ Provide an interactive, clean Gradio interface for accessible health insights  
+🔍 Interpret model predictions in a transparent and educational way
+
+> This project brings **AI + empathy** into healthcare by making risk awareness simple and personalized.
 
 ---
 
-## 🛠️ Installation
+## 🚀 Features at a Glance
 
+| 🚩 Feature                | 🔍 Description                                                                 |
+|--------------------------|---------------------------------------------------------------------------------|
+| 🧪 Accurate Predictions   | Built using a trained **Support Vector Machine (SVM)** for high-precision output |
+| 🤖 Smart Chatbot          | **Gemini-powered chatbot** for health guidance, Q&A, and general conversation   |
+| 📊 Explainable AI         | Transparent and digestible risk explanation with easy-to-understand feedback    |
+| 🎛️ Smooth UX              | Responsive and intuitive **Gradio-based** frontend                             |
+| 🌍 Web-Ready              | Deployed live on Hugging Face Spaces                                            |
+| 🔄 Extensible Design      | Easily upgrade the model, chatbot, or add new medical predictors                |
+
+---
+
+## 📸 Interface Snapshot
+
+<p align="center">
+  <img src="https://huggingface.co/spaces/whisplnspace/DiaAI_0.2/resolve/main/demo_ui.png" width="90%" alt="App UI Preview">
+</p>
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer       | Technology Used |
+|-------------|------------------|
+| 🧠 ML Model | Scikit-learn (SVM) |
+| 💬 Chatbot  | Gemini API (Google AI) |
+| 🌐 Frontend | Gradio |
+| 🧪 ML Tools | Pandas, NumPy, Matplotlib |
+| 📊 Optional Explainability | SHAP (future update) |
+| ☁️ Deployment | Hugging Face Spaces |
+| 🎙️ Voice (Future) | Whisper, Bark |
+
+---
+
+## 🤖 AI Systems Used
+
+### 🎯 Diabetes Risk Prediction
+
+- **Model:** Support Vector Machine (SVM)
+- **Dataset:** PIMA Indian Diabetes Dataset
+- **Pipeline:** Standard scaling, preprocessing, binary classification
+- **Reason:** Chosen for precision, generalization, and real-world performance
+
+### 💬 Conversational Chatbot
+
+- **Powered by:** [Gemini API](https://deepmind.google/technologies/gemini)
+- **Function:** Engages users in contextual conversation about diabetes, health habits, and AI-generated tips
+- **Pluggable:** Easily upgradeable to any LLM or API-driven model
+
+---
+
+## 🛠️ Local Setup
+
+1. **Clone the repo**
 ```bash
 git clone https://github.com/whisplnspace/DiaAi2.0.git
 cd DiaAi2.0
+```
+
+2. **Install dependencies**
+```bash
 pip install -r requirements.txt
 ```
 
-Make sure you have [ffmpeg](https://ffmpeg.org/) installed for audio processing:
-
-```bash
-# On Debian/Ubuntu
-sudo apt install ffmpeg
-
-# On macOS
-brew install ffmpeg
-```
-
----
-
-## ▶️ Running Locally
-
+3. **Run the app**
 ```bash
 python app.py
 ```
 
-This will start a Gradio interface in your browser.
+App will launch at `http://localhost:7860`.
+
+> 💡 Optional: Install `ffmpeg` if using voice input later.
 
 ---
 
-## 📁 Project Structure
+## 🧾 Project Structure
 
 ```
 DiaAi2.0/
-├── app.py                  # Main Gradio app
-├── utils.py                # Helper functions
-├── models/                 # Model loading and processing
-├── audio/                  # Audio utilities
-├── requirements.txt
-└── README.md
+├── app.py               # Gradio interface + control logic
+├── models/              # ML model(s) used for prediction
+├── chatbot/             # Gemini API integration & prompts
+├── utils.py             # Data handling utilities
+├── assets/              # Icons, images, audio
+├── requirements.txt     # Python dependencies
+└── README.md            # This beauty right here
 ```
 
 ---
 
-## 🤖 Models Used
+## 🌐 Architecture
 
-You can swap out or update the models in `models/`:
-
-- **ASR**: Whisper (Base or Tiny)
-- **LLM**: Mistral-7B, LLaMA-2, or any Hugging Face-supported transformer
-- **TTS**: Bark / Tortoise / any HF-compatible model
-
----
-
-## 📦 Hugging Face Space
-
-The project is also live on [Hugging Face Spaces](https://huggingface.co/spaces/whisplnspace/DiaAI_0.2), allowing anyone to try out the demo without local setup.
+```mermaid
+graph TD
+    A[👤 User Input] --> B[📊 Preprocess Features]
+    B --> C[🧠 Predict with SVM Model]
+    C --> D[📈 Display Results in UI]
+    A --> E[💬 Gemini Chatbot Interaction]
+    E --> D
+```
 
 ---
 
-## 🤝 Contributing
+## 📅 Roadmap
 
-Contributions are welcome! Feel free to fork the repo, submit issues, or create pull requests.
+- [x] SVM model integration
+- [x] Gemini API chatbot functionality
+- [ ] Voice input (Whisper)
+- [ ] Speech response (Bark)
+- [ ] Multi-disease prediction engine
+- [ ] Dark mode toggle 🌙
 
 ---
 
-## 📄 License
+## 🤝 Contribute
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+We welcome PRs, suggestions, and collaborations!
+
+```bash
+# Fork the repo
+# Create your feature branch
+git checkout -b feature/amazing-feature
+# Push changes
+git commit -m "Add something cool"
+git push origin feature/amazing-feature
+```
+
+Then open a PR 🚀
 
 ---
 
-## 🙌 Acknowledgments
+## 📜 License
 
-- [OpenAI Whisper](https://github.com/openai/whisper)
-- [Hugging Face](https://huggingface.co/)
-- [Suno Bark TTS](https://github.com/suno-ai/bark)
+This project is licensed under the **MIT License**.  
+Check the [LICENSE](LICENSE) file for more info.
+
+---
+
+## 💡 Credits & Acknowledgements
+
+- [Google Gemini](https://deepmind.google/technologies/gemini)
 - [Gradio](https://gradio.app/)
+- [Hugging Face](https://huggingface.co/)
+- [Scikit-learn](https://scikit-learn.org/)
+- [OpenAI Whisper](https://github.com/openai/whisper)
+- [Suno Bark](https://github.com/suno-ai/bark)
 
 ---
 
+## 👨‍💻 Author
+
+Crafted with ❤️ by [@whisplnspace](https://github.com/whisplnspace)  
+📧 Contact: whisplnspace@domain.com
+
+---
+
+> “Where AI meets empathy — predicting tomorrow’s health, today.”  
+— DiaAI Team
 ```
 
-Would you like me to add badges (like GitHub stars, license, etc.) or polish it for deployment on PyPI or Hugging Face Hub?
+---
+
+Want me to turn this into a GitHub README-ready Markdown file for direct upload? Or create a **social preview banner** for GitHub profile/repo branding?
