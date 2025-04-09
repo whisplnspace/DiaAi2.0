@@ -1,5 +1,4 @@
 
-```markdown
 # DiaAI 2.0 🧠💬
 
 **DiaAI 2.0** is an open-source, multimodal AI assistant designed to simulate real-time dialogue experiences using state-of-the-art language and speech models. Whether you're looking to build intelligent voice-based assistants, interactive avatars, or conversational AI demos, DiaAI provides a modular, extensible base to get started quickly.
