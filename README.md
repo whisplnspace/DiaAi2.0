@@ -50,7 +50,7 @@
 ## 📸 Interface Snapshot
 
 <p align="center">
-  <img src="https://huggingface.co/spaces/whisplnspace/DiaAI_0.2/resolve/main/demo_ui.png" width="90%" alt="App UI Preview">
+  <img src="![Image](https://github.com/user-attachments/assets/1056bb8d-fefe-46ec-b6aa-7f3edfe9e21d)" width="90%" alt="App UI Preview">
 </p>
 
 ---
