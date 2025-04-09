@@ -215,4 +215,4 @@ Crafted with ❤️ by [@whisplnspace](https://github.com/whisplnspace)
 
 ---
 
-Want me to turn this into a GitHub README-ready Markdown file for direct upload? Or create a **social preview banner** for GitHub profile/repo branding?
+Want me to turn this into a GitHub README-ready Markdown file for direct upload? Or create a social preview banner for GitHub profile/repo branding?
